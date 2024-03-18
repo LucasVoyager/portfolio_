@@ -1,9 +1,20 @@
+import 'bootstrap-icons/font/bootstrap-icons.css'
+
 import Avatar from '../../components/Avatar'
 import Paragraph from '../../components/Paragraph'
 import Title from '../../components/Title'
-import { ButtonTheme, Describe, SideBarContainer } from './styles'
+import {
+  ButtonTheme,
+  Describe,
+  LinksSocialMedia,
+  SideBarContainer
+} from './styles'
 
-const Sidebar = () => (
+type Props = {
+  changeTheme: () => void
+}
+
+const Sidebar = (props: Props) => (
   <aside>
     <SideBarContainer>
       <Avatar />
@@ -14,7 +25,18 @@ const Sidebar = () => (
       <Describe typep="main" fontSize={12}>
         Dev Full-Stack Python
       </Describe>
-      <ButtonTheme>Trocar tema</ButtonTheme>
+      <ButtonTheme onClick={props.changeTheme}>Trocar tema</ButtonTheme>
+      <LinksSocialMedia>
+        <a href="https://www.linkedin.com/in/lucasbarrosds">
+          <i className="bi bi-linkedin"></i>
+        </a>
+        <a href="https://github.com/LucasVoyager">
+          <i className="bi bi-github"></i>
+        </a>
+        <a href="mailto:fallenagamesytb@gmail.com">
+          <i className="bi bi-mailbox"></i>
+        </a>
+      </LinksSocialMedia>
     </SideBarContainer>
   </aside>
 )
